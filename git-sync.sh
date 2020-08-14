@@ -7,11 +7,6 @@ SOURCE_BRANCH=$2
 DESTINATION_REPO=$3
 DESTINATION_BRANCH=$4
 
-SOURCE_REPO="https://JasWoolieX:jack%40663481@github.com/woolworthslimited/woolworths-mobile-api-automation.git"
-SOURCE_BRANCH="master"
-DESTINATION_REPO="https://JasWoolieX:jack%40663481@github.com/JasWoolieX/woolworths-mobile-api-automation.git"
-DESTINATION_BRANCH="master"
-
 if ! echo $SOURCE_REPO | grep '.git'
 then
   if [[ -n "$SSH_PRIVATE_KEY" ]]
