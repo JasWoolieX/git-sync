@@ -46,6 +46,7 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 #git --no-pager branch -a -vv
 echo "Checking git status"
 git status
-git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
-#git pull https://hostname/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git BRANCH_NAME
+#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
+git pull $SOURCE_REPO $SOURCE_BRANCH
+git push $DESTINATION_REPO master
 #git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}" -f
