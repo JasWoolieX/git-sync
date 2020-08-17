@@ -50,6 +50,7 @@ git fetch upstream
 git commit
 git pull ${DESTINATION_REPO} master
 git rebase upstream/master
+git merge upstream/master
 git push ${DESTINATION_REPO} master
 #git checkout master
 #git merge upstream/master
