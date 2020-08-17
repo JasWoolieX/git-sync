@@ -7,6 +7,11 @@ SOURCE_BRANCH=$2
 DESTINATION_REPO=$3
 DESTINATION_BRANCH=$4
 
+SOURCE_REPO="https://JasWoolieX:jack%40663481@github.com/woolworthslimited/woolworths-mobile-api-automation.git"
+SOURCE_BRANCH="master"
+DESTINATION_REPO="https://JasWoolieX:jack%40663481@github.com/JasWoolieX/woolworths-mobile-api-automation.git"
+DESTINATION_BRANCH="master"
+
 if ! echo $SOURCE_REPO | grep '.git'
 then
   if [[ -n "$SSH_PRIVATE_KEY" ]]
@@ -31,6 +36,9 @@ fi
 echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
+echo "UPSTREAM_REPO=$SOURCE_REPO"
+echo "BRANCHES=$SOURCE_BRANCH"
+
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 git remote add destination "$DESTINATION_REPO"
 
@@ -42,13 +50,15 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 echo "Checking git status"
 git status
 #git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
-git remote add upstream ${SOURCE_REPO}
+git remote add upstream "$SOURCE_REPO"
 git fetch upstream
-git checkout master
-git merge upstream/master
-git push
-#git push origin master
+git rebase upstream/master
 git push ${DESTINATION_REPO} master
+#git checkout master
+#git merge upstream/master
+#git push
+#git push origin master
+
 
 #git pull $SOURCE_REPO $SOURCE_BRANCH
 #git push $DESTINATION_REPO master
