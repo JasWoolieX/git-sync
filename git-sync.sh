@@ -53,6 +53,7 @@ git status
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
 git commit
+git pull ${DESTINATION_REPO} master
 git rebase upstream/master
 git push ${DESTINATION_REPO} master
 #git checkout master
