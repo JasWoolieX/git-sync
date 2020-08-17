@@ -42,6 +42,14 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 echo "Checking git status"
 git status
 #git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
-git pull $SOURCE_REPO $SOURCE_BRANCH
-git push $DESTINATION_REPO master
+git remote add upstream ${SOURCE_REPO}
+git fetch upstream
+git checkout master
+git pull $DESTINATION_REPO master
+git pull upstream master
+git merge upstream master
+#git push $DESTINATION_REPO master
+git push origin master
+#git pull $SOURCE_REPO $SOURCE_BRANCH
+#git push $DESTINATION_REPO master
 #git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}" -f
