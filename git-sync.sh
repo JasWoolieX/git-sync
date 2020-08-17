@@ -52,6 +52,7 @@ git status
 #git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
+git commit
 git rebase upstream/master
 git push ${DESTINATION_REPO} master
 #git checkout master
