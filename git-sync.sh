@@ -41,12 +41,10 @@ echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 #git --no-pager branch -a -vv
 echo "Checking git status"
 git status
-#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
-git remote add upstream "$SOURCE_REPO"
 git fetch upstream
-git pull upstream master
 git checkout master
-git merge --no-ff upstream/master
+git merge upstream/master
+git push upstream master
 #git rebase upstream/master
 #git push -f origin master
 #git push origin master
