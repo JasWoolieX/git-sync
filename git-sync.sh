@@ -35,6 +35,7 @@ DESTINATION_BRANCH="master"
 
 echo "git status"
 git status
+git fetch upstream
 
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
