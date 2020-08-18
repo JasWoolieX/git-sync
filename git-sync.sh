@@ -28,8 +28,11 @@ then
   fi
 fi
 
-echo "New Changes"
+echo "git status"
 git status
+echo "git remote add"
+git remote add upstream "$SOURCE_REPO"
+echo "git fetch upstream"
 git fetch upstream
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
