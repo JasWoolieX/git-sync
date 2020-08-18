@@ -43,12 +43,11 @@ echo "git status upstream"
 git pull upstream master
 echo "git status pull"
 git checkout master
-git merge --no-ff upstream/master
 git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
-git push destination master
+git push "$DESTINATION_REPO" master
 echo "git destination"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
