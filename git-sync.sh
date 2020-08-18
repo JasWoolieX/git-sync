@@ -40,6 +40,9 @@ git remote add upstream "$SOURCE_REPO"
 echo "git status after"
 git fetch upstream
 echo "git status upstream"
+git checkout master
+git merge upstream/master
+echo "git merge"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
