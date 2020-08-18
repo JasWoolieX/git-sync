@@ -46,6 +46,7 @@ git remote add upstream "$SOURCE_REPO"
 git fetch upstream
 git checkout master
 git rebase upstream/master
+#git push -f origin master
 git push "${DESTINATION_REPO}" master
 #git checkout master
 #git merge upstream/master
