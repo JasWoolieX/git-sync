@@ -30,7 +30,8 @@ fi
 
 echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
-
+echo "Checking git status"
+echo "Check that this is being printed"
 #git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 #git remote add destination "$DESTINATION_REPO"
 
