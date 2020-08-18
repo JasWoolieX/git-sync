@@ -41,6 +41,7 @@ echo "git status after"
 git fetch upstream
 echo "git status upstream"
 git pull upstream master
+git commit -m "Updating from upstream"
 echo "git status pull"
 git checkout master
 echo "git pull source"
@@ -53,7 +54,7 @@ git config user.name "JasWooliesX"
 echo "git config"
 git pull "$DESTINATION_REPO" master
 echo "git pull destination"
-git commit -m "Updating from upstream"
+#git commit -m "Updating from upstream"
 echo "git commit"
 git push destination master
 echo "git destination"
