@@ -47,6 +47,8 @@ git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
+git config user.email "jbamrah@woolworths.com.au"
+git config user.name "JasWooliesX"
 git pull "$DESTINATION_REPO" master
 echo "git pull destination"
 git commit -m "Updating from upstream"
