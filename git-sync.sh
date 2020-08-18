@@ -39,8 +39,12 @@ git status
 git remote add upstream "$SOURCE_REPO"
 git remote -v
 echo "git status after"
-git fetch upstream
 echo "git status upstream"
+git fetch upstream
+git config user.email "jbamrah@woolworths.com.au"
+git config user.name "JasWooliesX"
+echo "git config"
+
 git pull upstream master
 git status
 echo "git status after pull"
@@ -52,11 +56,7 @@ git merge upstream/master
 echo "git merge"
 #git push upstream master
 echo "git push"
-git config user.email "jbamrah@woolworths.com.au"
-git config user.name "JasWooliesX"
-echo "git config"
-git pull "$DESTINATION_REPO" master
-echo "git pull destination"
+
 #git commit -m "Updating from upstream"
 echo "git commit"
 git push destination master
