@@ -46,7 +46,7 @@ git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
 
 
-git rebase upstream/master
+#git rebase upstream/master
 git pull source master
 git status
 echo "Should get commit"
