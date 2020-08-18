@@ -34,6 +34,9 @@ git remote add destination "$DESTINATION_REPO"
 # Pull all branches references down locally so subsequent commands can see them
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
+# Print out all branches
+git --no-pager branch -a -vv
+
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
