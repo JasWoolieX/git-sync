@@ -31,13 +31,29 @@ fi
 echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
-git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
-git remote add destination "$DESTINATION_REPO"
+#git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
+#git remote add destination "$DESTINATION_REPO"
 
 # Pull all branches references down locally so subsequent commands can see them
-git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
+#git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 # Print out all branches
-git --no-pager branch -a -vv
+#git --no-pager branch -a -vv
+echo "Checking git status"
+git status
+#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
+git remote add upstream "$SOURCE_REPO"
+git fetch upstream
+git checkout master
+git rebase upstream/master
+git push "${DESTINATION_REPO}" master
+#git checkout master
+#git merge upstream/master
+#git push
+#git push origin master
 
-git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
+
+#git pull $SOURCE_REPO $SOURCE_BRANCH
+#git push $DESTINATION_REPO master
+#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
+
