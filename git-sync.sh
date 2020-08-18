@@ -41,6 +41,7 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 echo "git status"
 git status
+echo "git fetch"
 git fetch upstream
 
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
