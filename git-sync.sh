@@ -37,10 +37,13 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 echo "git status"
 git status
 git remote add upstream "$SOURCE_REPO"
+git remote -v
 echo "git status after"
 git fetch upstream
 echo "git status upstream"
 git pull upstream master
+git status
+echo "git status after pull"
 git commit -m "Updating from upstream"
 echo "git status pull"
 git checkout master
