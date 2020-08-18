@@ -28,6 +28,11 @@ then
   fi
 fi
 
+SOURCE_REPO="https://JasWoolieX:jack%40663481@github.com/woolworthslimited/woolworths-mobile-api-automation.git"
+SOURCE_BRANCH="master"
+DESTINATION_REPO="https://JasWoolieX:jack%40663481@github.com/JasWoolieX/woolworths-mobile-api-automation.git"
+DESTINATION_BRANCH="master"
+
 echo "git status"
 git status
 echo "git remote add"
