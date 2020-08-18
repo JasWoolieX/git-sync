@@ -33,6 +33,12 @@ SOURCE_BRANCH="master"
 DESTINATION_REPO="https://JasWoolieX:jack%40663481@github.com/JasWoolieX/woolworths-mobile-api-automation.git"
 DESTINATION_BRANCH="master"
 
+git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
+git remote add destination "$DESTINATION_REPO"
+
+# Pull all branches references down locally so subsequent commands can see them
+git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
+
 echo "git status"
 git status
 
