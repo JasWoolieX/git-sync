@@ -48,11 +48,12 @@ git checkout master
 git merge --no-ff upstream/master
 #git rebase upstream/master
 #git push -f origin master
-git push "${DESTINATION_REPO}" master
+git push origin master
+#git push "${DESTINATION_REPO}" master
 #git checkout master
 #git merge upstream/master
 #git push
-#git push origin master
+
 
 
 #git pull $SOURCE_REPO $SOURCE_BRANCH
