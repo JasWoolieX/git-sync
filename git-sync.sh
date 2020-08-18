@@ -47,11 +47,9 @@ echo "git config"
 
 git pull upstream master
 git status
+git checkout master
 echo "git status after pull"
 git commit -m "Updating from upstream"
-echo "git status pull"
-git checkout master
-echo "git pull source"
 git merge upstream/master
 echo "git merge"
 #git push upstream master
@@ -61,6 +59,7 @@ echo "git push"
 echo "git commit"
 git push destination master
 echo "git destination"
+git push upstream master
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
