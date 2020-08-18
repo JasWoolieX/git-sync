@@ -47,8 +47,11 @@ git config user.name "JasWooliesX"
 
 
 git rebase upstream/master
+git pull source master
 git status
+echo "Should get commit"
 #git commit -m "Updating from upstream"
+#git pull origin master f
 git push destination master
 echo "git End"
 #git push origin master
