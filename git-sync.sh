@@ -31,9 +31,6 @@ fi
 echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
-echo "UPSTREAM_REPO=$SOURCE_REPO"
-echo "BRANCHES=$SOURCE_BRANCH"
-
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 git remote add destination "$DESTINATION_REPO"
 
@@ -41,23 +38,6 @@ git remote add destination "$DESTINATION_REPO"
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 # Print out all branches
-#git --no-pager branch -a -vv
-echo "Checking git status"
-git status
-#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
-git remote add upstream "$SOURCE_REPO"
-git fetch upstream
-git commit
-git pull ${DESTINATION_REPO} master
-git rebase upstream/master
-git merge upstream/master
-git push ${DESTINATION_REPO} master
-#git checkout master
-#git merge upstream/master
-#git push
-#git push origin master
+git --no-pager branch -a -vv
 
-
-#git pull $SOURCE_REPO $SOURCE_BRANCH
-#git push $DESTINATION_REPO master
-#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}" -f
+git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
