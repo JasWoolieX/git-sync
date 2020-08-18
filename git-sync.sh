@@ -36,6 +36,7 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 echo "git status"
 git status
+git remote add destination "$SOURCE_REPO"
 echo "git status after"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
