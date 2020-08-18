@@ -40,6 +40,7 @@ git --no-pager branch -a -vv
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
+git pull upstream master
 git checkout master
 
 git config user.email "jbamrah@woolworths.com.au"
@@ -47,7 +48,6 @@ git config user.name "JasWooliesX"
 
 
 #git rebase upstream/master
-git pull source master
 git status
 echo "Should get commit"
 #git commit -m "Updating from upstream"
