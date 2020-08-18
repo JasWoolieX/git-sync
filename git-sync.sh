@@ -34,7 +34,7 @@ git remote add destination "$DESTINATION_REPO"
 # Pull all branches references down locally so subsequent commands can see them
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
-echo "git status"
+echo "git Start"
 git status
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
@@ -42,11 +42,12 @@ git checkout master
 
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
-echo "git config"
+
 
 git rebase upstream/master
 git commit -m "Updating from upstream"
 git push -f destination master
+echo "git End"
 #git push origin master
 #git push "${DESTINATION_REPO}" master
 
