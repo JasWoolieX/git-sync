@@ -46,7 +46,7 @@ git config user.name "JasWooliesX"
 git rebase upstream/master
 git status
 #git commit -m "Updating from upstream"
-git push -f destination master
+git push destination master
 echo "git End"
 #git push origin master
 #git push "${DESTINATION_REPO}" master
