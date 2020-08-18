@@ -28,6 +28,7 @@ then
   fi
 fi
 
+echo "New Changes"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
