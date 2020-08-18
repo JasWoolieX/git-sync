@@ -43,12 +43,15 @@ echo "git status upstream"
 git pull upstream master
 echo "git status pull"
 git checkout master
+git pull "$SOURCE_REPO" master
+echo "git pull source"
 git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
+echo "git config"
 git pull "$DESTINATION_REPO" master
 echo "git pull destination"
 git commit -m "Updating from upstream"
