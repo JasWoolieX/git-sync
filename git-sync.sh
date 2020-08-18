@@ -57,9 +57,11 @@ echo "git push"
 
 #git commit -m "Updating from upstream"
 echo "git commit"
+git push
 git push destination master
 echo "git destination"
 git push upstream master
+echo "git push upstream"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
