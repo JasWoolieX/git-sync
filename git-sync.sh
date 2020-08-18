@@ -48,7 +48,8 @@ git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
-git push origin master
+git push destination master
+echo "git destination"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
