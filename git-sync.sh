@@ -36,7 +36,6 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 echo "git status"
 git status
-git fetch upstream
 git checkout master
 echo "git status after"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
