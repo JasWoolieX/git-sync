@@ -37,31 +37,20 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 echo "git status"
 git status
 git remote add upstream "$SOURCE_REPO"
-git remote -v
-echo "git status after"
-echo "git status upstream"
 git fetch upstream
+git checkout master
+
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
 echo "git config"
 
-git pull upstream master
-git status
-git checkout master
-echo "git status after pull"
+git rebase upstream/master
 git commit -m "Updating from upstream"
-git merge upstream/master
-echo "git merge"
-#git push upstream master
-echo "git push"
+git push -f destination master
+#git push origin master
+#git push "${DESTINATION_REPO}" master
 
-#git commit -m "Updating from upstream"
-echo "git commit"
-git push
-git push destination master
-echo "git destination"
-git push upstream master
-echo "git push upstream"
+
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
