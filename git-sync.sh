@@ -28,11 +28,6 @@ then
   fi
 fi
 
-SOURCE_REPO="https://JasWoolieX:${{ secrets.PASSWORD }}@github.com/woolworthslimited/woolworths-mobile-api-automation.git"
-SOURCE_BRANCH="master"
-DESTINATION_REPO="https://JasWoolieX:${{ secrets.PASSWORD }}@github.com/JasWoolieX/woolworths-mobile-api-automation.git"
-DESTINATION_BRANCH="master"
-
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 git remote add destination "$DESTINATION_REPO"
 
