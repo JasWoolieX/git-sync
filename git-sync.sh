@@ -47,6 +47,8 @@ git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
+git remote -v
+echo "remote -v"
 git pull "$DESTINATION_REPO" master
 echo "git pull destination"
 git push "$DESTINATION_REPO" master
