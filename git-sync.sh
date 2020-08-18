@@ -35,7 +35,6 @@ git remote add destination "$DESTINATION_REPO"
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 echo "git Start"
-git status
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
 git checkout master
@@ -45,6 +44,7 @@ git config user.name "JasWooliesX"
 
 
 git rebase upstream/master
+git status
 #git commit -m "Updating from upstream"
 git push -f destination master
 echo "git End"
