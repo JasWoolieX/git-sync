@@ -39,6 +39,6 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 # Print out all branches
 git --no-pager branch -a -vv
-
+git pull
 git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
 
