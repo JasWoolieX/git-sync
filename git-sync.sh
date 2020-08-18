@@ -47,10 +47,10 @@ git merge upstream/master
 echo "git merge"
 git push upstream master
 echo "git push"
-git remote -v
-echo "remote -v"
 git pull "$DESTINATION_REPO" master
 echo "git pull destination"
+git commit -m "Updating from upstream"
+echo "git commit"
 git push "$DESTINATION_REPO" master
 echo "git destination"
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
