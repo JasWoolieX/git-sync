@@ -43,6 +43,7 @@ echo "git status upstream"
 git checkout master
 git merge upstream/master
 echo "git merge"
+git push upstream master
 #echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
 #echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
 
