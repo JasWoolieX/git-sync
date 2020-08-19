@@ -59,6 +59,7 @@ echo "changes pulled"
 git add .
 git commit -m "Updating from upstream"
 git push
+echo "git push"
 git push destination master
 echo "git End"
 git remote rm upstream
