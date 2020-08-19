@@ -37,7 +37,7 @@ git --no-pager branch -a -vv
 
 git clone "$DESTINATION_REPO" /root/destination --origin destination
 # Pull all branches references down locally so subsequent commands can see them
-git fetch destination '+refs/heads/*:refs/heads/*' --update-head-ok
+#git fetch destination '+refs/heads/*:refs/heads/*' --update-head-ok
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
