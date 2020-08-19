@@ -60,8 +60,6 @@ echo "git push"
 git add .
 git commit -m "Updating from upstream"
 git push
-echo "git push 2"
-git push destination master
 echo "git End"
 git remote rm upstream
 git remote --verbose
