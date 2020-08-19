@@ -54,12 +54,13 @@ git checkout master
 echo "checked out master"
 git pull "$SOURCE_REPO" master
 echo "changes pulled"
-
+git push
+echo "git push"
 #git pull destination master
 git add .
 git commit -m "Updating from upstream"
 git push
-echo "git push"
+echo "git push 2"
 git push destination master
 echo "git End"
 git remote rm upstream
