@@ -28,7 +28,7 @@ then
   fi
 fi
 
-git clone "$SOURCE_REPO" /root/source --origin source --mirror && cd /root/source
+git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 git remote add destination "$DESTINATION_REPO"
 
 # Pull all branches references down locally so subsequent commands can see them
