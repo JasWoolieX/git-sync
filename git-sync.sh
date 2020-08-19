@@ -30,7 +30,7 @@ fi
 
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 git remote add destination "$DESTINATION_REPO"
-
+git remote --v
 # Pull all branches references down locally so subsequent commands can see them
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
@@ -39,7 +39,7 @@ git --no-pager branch -a -vv
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
-git checkout master
+git checkout woolworthslimited:master
 git merge upstream
 
 git config user.email "jbamrah@woolworths.com.au"
