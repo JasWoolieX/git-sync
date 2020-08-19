@@ -39,7 +39,7 @@ git --no-pager branch -a -vv
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
-git checkout master
+git checkout remotes/upstream/master
 git fetch upstream
 git merge upstream/master
 
