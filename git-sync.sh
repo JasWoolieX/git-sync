@@ -2,34 +2,75 @@
 
 set -e
 
-UPSTREAM_REPO=$1
-BRANCH_MAPPING=$2
+SOURCE_REPO=$1
+SOURCE_BRANCH=$2
 DESTINATION_REPO=$3
 DESTINATION_BRANCH=$4
-if [[ -z "$UPSTREAM_REPO" ]]; then
-  echo "Missing \$UPSTREAM_REPO"
-  exit 1
-fi
 
-if [[ -z "$BRANCH_MAPPING" ]]; then
-  echo "Missing \$SOURCE_BRANCH:\$DESTINATION_BRANCH"
-  exit 1
-fi
-
-if ! echo $UPSTREAM_REPO | grep '\.git'
+if ! echo $SOURCE_REPO | grep '.git'
 then
-  UPSTREAM_REPO="https://github.com/${UPSTREAM_REPO}.git"
+  if [[ -n "$SSH_PRIVATE_KEY" ]]
+  then
+    SOURCE_REPO="git@github.com:${SOURCE_REPO}.git"
+    GIT_SSH_COMMAND="ssh -v"
+  else
+    SOURCE_REPO="https://github.com/${SOURCE_REPO}.git"
+  fi
+fi
+if ! echo $DESTINATION_REPO | grep -E '.git|@'
+then
+  if [[ -n "$SSH_PRIVATE_KEY" ]]
+  then
+    DESTINATION_REPO="git@github.com:${DESTINATION_REPO}.git"
+    GIT_SSH_COMMAND="ssh -v"
+  else
+    DESTINATION_REPO="https://github.com/${DESTINATION_REPO}.git"
+  fi
 fi
 
-echo "UPSTREAM_REPO=$UPSTREAM_REPO"
-echo "BRANCHES=$BRANCH_MAPPING"
+git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
+git remote add destination "$DESTINATION_REPO"
 
-git config --unset-all http."https://github.com/".extraheader
-git remote set-url origin ""https://JasWoolieX:jack%40663481@github.com/JasWoolieX/woolworths-mobile-api-automation.git""
-git remote add tmp_upstream "$UPSTREAM_REPO"
-git fetch tmp_upstream
-git pull tmp_upstream master
+# Pull all branches references down locally so subsequent commands can see them
+git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
+
+# Print out all branches
+git --no-pager branch -a -vv
+
+echo "git Start"
+git remote add upstream "$SOURCE_REPO"
+git fetch upstream
+git pull upstream master
+git checkout master
+
+git config user.email "jbamrah@woolworths.com.au"
+git config user.name "JasWooliesX"
+
+
+#git rebase upstream/master
+git status
+echo "Should get commit"
+#git commit -m "Updating from upstream"
+git pull destination master
+git push destination master
+echo "git End"
+git remote rm upstream
 git remote --verbose
-git push origin master
-git remote rm tmp_upstream
-git remote --verbose
+
+#git push origin master
+#git push "${DESTINATION_REPO}" master
+
+
+#echo "SOURCE=$SOURCE_REPO:$SOURCE_BRANCH"
+#echo "DESTINATION=$DESTINATION_REPO:$DESTINATION_BRANCH"
+
+#git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
+#git remote add destination "$DESTINATION_REPO"
+
+# Pull all branches references down locally so subsequent commands can see them
+#git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
+
+# Print out all branches
+#git --no-pager branch -a -vv
+#git pull
+#git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
