@@ -51,7 +51,7 @@ git config user.name "JasWooliesX"
 git status
 echo "Should get commit"
 #git commit -m "Updating from upstream"
-#git pull origin master f
+git pull destination master
 git push destination master
 echo "git End"
 git remote rm upstream
