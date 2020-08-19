@@ -55,12 +55,10 @@ echo "checked out master"
 git pull "$SOURCE_REPO" master
 echo "changes pulled"
 
-
-#git rebase upstream/master
-git status
 #git pull destination master
+git add .
 git commit -m "Updating from upstream"
-git push destination master
+git push origin master
 echo "git End"
 git remote rm upstream
 git remote --verbose
