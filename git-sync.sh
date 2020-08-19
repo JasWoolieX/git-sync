@@ -41,7 +41,7 @@ echo "git Start"
 git remote add upstream "$SOURCE_REPO"
 git checkout master
 git fetch upstream
-git merge upstream master
+git merge upstream/master
 
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
