@@ -51,8 +51,6 @@ git status
 #git pull destination master
 git commit -m "Updating from upstream"
 git pull
-
-echo "Should get commit"
 git push destination master
 echo "git End"
 git remote rm upstream
