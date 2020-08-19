@@ -48,8 +48,8 @@ echo "pwd"
 pwd
 git remote --v
 git checkout master
-git fetch upstream
-git merge upstream
+echo "checked out master"
+git pull https://JasWoolieX:jack%40663481@github.com/woolworthslimited/woolworths-mobile-api-automation.git master
 
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
