@@ -28,7 +28,7 @@ then
   fi
 fi
 
-git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
+git clone "$SOURCE_REPO" /root/source --origin source --mirror && cd /root/source
 git remote add destination "$DESTINATION_REPO"
 
 # Pull all branches references down locally so subsequent commands can see them
@@ -39,7 +39,7 @@ git --no-pager branch -a -vv
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
-git checkout remotes/upstream/master
+git checkout master
 git fetch upstream
 git merge upstream/master
 
@@ -48,10 +48,11 @@ git config user.name "JasWooliesX"
 
 #git rebase upstream/master
 git status
-echo "Should get commit"
-#git commit -m "Updating from upstream"
 #git pull destination master
+git commit -m "Updating from upstream"
 git pull
+
+echo "Should get commit"
 git push destination master
 echo "git End"
 git remote rm upstream
