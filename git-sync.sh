@@ -49,7 +49,6 @@ git config user.name "JasWooliesX"
 git status
 #git pull destination master
 git commit -m "Updating from upstream"
-git pull
 git push destination master
 echo "git End"
 git remote rm upstream
