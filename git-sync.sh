@@ -29,8 +29,8 @@ then
 fi
 
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
-#git clone "$DESTINATION_REPO" /root/destination --origin destination && cd /root/destination
-git remote add destination "$DESTINATION_REPO"
+git clone "$DESTINATION_REPO" /root/destination --origin destination
+#git remote add destination "$DESTINATION_REPO"
 cd /root/destination
 echo "pwd"
 pwd
