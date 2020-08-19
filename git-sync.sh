@@ -29,21 +29,26 @@ then
 fi
 
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
-git clone "$DESTINATION_REPO" /root/destination --origin destination
-#git remote add destination "$DESTINATION_REPO"
-cd /root/destination
-echo "pwd"
-pwd
-git remote --v
 # Pull all branches references down locally so subsequent commands can see them
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 
 # Print out all branches
 git --no-pager branch -a -vv
 
+git clone "$DESTINATION_REPO" /root/destination --origin destination
+# Pull all branches references down locally so subsequent commands can see them
+git fetch destination '+refs/heads/*:refs/heads/*' --update-head-ok
+
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
+
+#git remote add destination "$DESTINATION_REPO"
+cd /root/destination
+echo "pwd"
+pwd
+git remote --v
 git checkout master
+git fetch upstream
 git merge upstream
 
 git config user.email "jbamrah@woolworths.com.au"
