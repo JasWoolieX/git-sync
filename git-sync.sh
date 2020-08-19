@@ -38,6 +38,8 @@ git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
 git --no-pager branch -a -vv
 
 echo "git Start"
+git remote rm upstream
+git remote --verbose
 git remote add upstream "$SOURCE_REPO"
 git fetch upstream
 git pull upstream master
@@ -54,6 +56,8 @@ echo "Should get commit"
 #git pull origin master f
 git push destination master
 echo "git End"
+
+
 #git push origin master
 #git push "${DESTINATION_REPO}" master
 
