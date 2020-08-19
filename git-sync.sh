@@ -52,7 +52,7 @@ echo "checked out master"
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
 git pull https://JasWoolieX:jack%40663481@github.com/woolworthslimited/woolworths-mobile-api-automation.git master
-
+echo "changes pulled"
 
 
 #git rebase upstream/master
