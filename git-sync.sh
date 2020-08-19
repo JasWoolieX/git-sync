@@ -42,8 +42,8 @@ git remote add upstream "$SOURCE_REPO"
 git fetch upstream
 git pull upstream master
 git checkout master
-git merge upstream master
-git push upstream master
+git merge destination master
+#git push upstream master
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
 
