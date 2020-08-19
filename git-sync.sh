@@ -39,7 +39,7 @@ git --no-pager branch -a -vv
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
-git checkout master
+git checkout upstream/master
 git fetch upstream
 git pull upstream master
 
@@ -51,6 +51,7 @@ git status
 echo "Should get commit"
 #git commit -m "Updating from upstream"
 #git pull destination master
+git pull
 git push destination master
 echo "git End"
 git remote rm upstream
