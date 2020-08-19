@@ -29,7 +29,6 @@ then
 fi
 
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
-git clone "$DESTINATION_REPO" /root/destination --origin destination
 git remote add destination "$DESTINATION_REPO"
 
 # Pull all branches references down locally so subsequent commands can see them
@@ -40,9 +39,8 @@ git --no-pager branch -a -vv
 
 echo "git Start"
 git remote add upstream "$SOURCE_REPO"
-git checkout destination/master
-git fetch upstream
-git merge upstream/master
+git checkout master
+git merge upstream
 
 git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
