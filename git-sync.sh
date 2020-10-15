@@ -50,9 +50,9 @@ git config user.email "jbamrah@woolworths.com.au"
 git config user.name "JasWooliesX"
 
 git remote --v
-git checkout master
+git checkout develop
 echo "checked out master"
-git pull "$SOURCE_REPO" master
+git pull "$SOURCE_REPO" develop
 echo "changes pulled"
 git push
 echo "git push"
