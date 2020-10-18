@@ -51,7 +51,7 @@ git config user.name "JasWooliesX"
 
 git remote --v
 git checkout develop
-echo "checked out master"
+echo $SOURCE_REPO
 git pull "$SOURCE_REPO" develop
 echo "changes pulled"
 git push
