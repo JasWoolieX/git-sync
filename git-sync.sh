@@ -53,7 +53,8 @@ git remote --v
 git checkout develop
 echo $SOURCE_REPO
 git pull "$SOURCE_REPO" develop
-echo "changes pulled"
+echo "git status below"
+git status
 git push
 echo "git push"
 #git pull destination master
