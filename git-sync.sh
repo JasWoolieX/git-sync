@@ -28,6 +28,9 @@ then
   fi
 fi
 
+echo "SOURCE_REPO:" $SOURCE_REPO
+echo "DESTINATION_REPO:" $DESTINATION_REPO
+
 git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 # Pull all branches references down locally so subsequent commands can see them
 git fetch source '+refs/heads/*:refs/heads/*' --update-head-ok
